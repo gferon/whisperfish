@@ -2014,11 +2014,11 @@ dependencies = [
 [[package]]
 name = "libsignal-service"
 version = "0.1.0"
-source = "git+https://github.com/whisperfish/libsignal-service-rs?branch=main#65b51dbe7b42dae992f6a6d4c444bc2081a70be0"
 dependencies = [
  "aes",
  "aes-gcm",
  "async-trait",
+ "async-tungstenite",
  "base64 0.22.1",
  "bincode",
  "bytes",
@@ -2027,51 +2027,33 @@ dependencies = [
  "ctr",
  "derivative",
  "futures",
+ "headers",
  "hex",
  "hkdf",
  "hmac",
- "libsignal-protocol",
- "phonenumber",
- "prost 0.13.2",
- "prost-build",
- "rand 0.8.5",
- "serde",
- "serde_json",
- "sha2",
- "thiserror",
- "tracing",
- "tracing-futures",
- "url",
- "uuid",
- "zkgroup",
-]
-
-[[package]]
-name = "libsignal-service-hyper"
-version = "0.1.0"
-source = "git+https://github.com/whisperfish/libsignal-service-rs?branch=main#65b51dbe7b42dae992f6a6d4c444bc2081a70be0"
-dependencies = [
- "async-trait",
- "async-tungstenite",
- "bytes",
- "futures",
- "headers",
  "http-body-util",
  "hyper 1.4.1",
  "hyper-rustls",
  "hyper-timeout 0.5.1",
  "hyper-util",
- "libsignal-service",
+ "libsignal-protocol",
  "mpart-async",
+ "phonenumber",
+ "prost 0.13.2",
+ "prost-build",
+ "rand 0.8.5",
  "rustls-pemfile",
  "serde",
  "serde_json",
+ "sha2",
  "thiserror",
  "tokio",
  "tokio-rustls",
  "tracing",
  "tracing-futures",
  "url",
+ "uuid",
+ "zkgroup",
 ]
 
 [[package]]
@@ -4602,7 +4584,6 @@ dependencies = [
  "itertools 0.12.1",
  "libsignal-protocol",
  "libsignal-service",
- "libsignal-service-hyper",
  "libsqlite3-sys",
  "mime",
  "mime_classifier",
@@ -4655,7 +4636,7 @@ dependencies = [
  "aes",
  "anyhow",
  "async-trait",
- "base64",
+ "base64 0.21.7",
  "bincode",
  "cbc",
  "chrono",
